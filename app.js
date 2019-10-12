@@ -15,7 +15,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://localhost/scootpair');
+mongoose.connect('mongodb://mongo:27017/scootpair');
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
