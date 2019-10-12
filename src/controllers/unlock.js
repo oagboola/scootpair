@@ -14,6 +14,8 @@ module.exports = async function(req, res) {
         action: 'unlock',
         result: 'success'
       });
+      activeUser.update({locked: false});
+      activeUser.save();
       res.send('Unlock');
     } else {
       log({

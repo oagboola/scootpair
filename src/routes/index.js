@@ -6,6 +6,7 @@ const validateOTP = require('../controllers/validateOTP');
 const validatePair = require('../controllers/validatePair');
 const unlock = require('../controllers/unlock');
 const history = require('../controllers/history');
+const reset = require('../controllers/reset');
 
 /* GET home page. */
 router.post('/initiate-pair', initatePair);
@@ -18,6 +19,6 @@ router.post('/unlock', unlock);
 
 router.get('/history', history);
 
-router.post('/reset');
+router.post('/reset', reset);
 
 module.exports = router;
