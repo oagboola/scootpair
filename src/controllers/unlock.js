@@ -9,8 +9,18 @@ module.exports = async function(req, res) {
 
     const activeUser = await User.findById(user);
     if(activeUser && activeUser.paired) {
+      log({
+        user: user,
+        action: 'unlock',
+        result: 'success'
+      });
       res.send('Unlock');
     } else {
+      log({
+        user: user,
+        action: 'unlock',
+        result: 'failure'
+      });
       res.send('User not paired')
     }
   } catch(e) {
