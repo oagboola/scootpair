@@ -13,7 +13,7 @@ module.exports = async function (req, res) {
       action: 'initiate_pair',
       result: 'success'
     });
-    res.send('Initiation started');
+    return res.send('Initiation started');
   } catch(e) {
     log({
       user: user,

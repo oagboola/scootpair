@@ -2,8 +2,9 @@
   "name": "scootpair",
   "version": "0.0.0",
   "scripts": {
-    "start": "node ./bin/www",
-    "start-dev": "nodemon ./bin/www"
+    "start": "DB=scootpair node ./bin/www",
+    "start-dev": "DB=scootpair nodemon ./bin/www",
+    "test": "NODE_ENV=test DB=test_db mocha src/test --exit"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -15,5 +16,11 @@
     "moment": "^2.24.0",
     "mongoose": "^5.7.4",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.1",
+    "supertest": "^4.0.2"
   }
 }

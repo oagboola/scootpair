@@ -4,10 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const indexRouter = require('./src/routes/index');
 const usersRouter = require('./src/routes/users');
-const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -15,7 +15,12 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://mongo:27017/scootpair');
+let db = 'mongodb://mongo:27017/' + process.env.DB;
+
+if (process.env.NODE_ENV  === 'test') {
+  db = "mongodb://localhost/test_db"
+}
+mongoose.connect(db);
 
 app.use(bodyParser.json());
 app.use(logger('dev'));

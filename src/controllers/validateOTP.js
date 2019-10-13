@@ -21,7 +21,7 @@ module.exports = async function(req, res) {
         } catch(e) {
           res.send(e);
         }
-        return res.send('OTP tried more than 3 times, account has been locked');
+        return res.status(400).send('OTP tried more than 3 times, account has been locked');
       }
       //check if otp code sent matches what was generated
       if(code === otp.otp) {
@@ -33,7 +33,7 @@ module.exports = async function(req, res) {
           action: 'validate_otp',
           result: 'success'
         });
-        res.send('OTP is valid');
+        res.send('Valid');
       } else {
         try {
           await otp.update({$inc: { entry_count: 1}});
@@ -43,9 +43,9 @@ module.exports = async function(req, res) {
             action: 'validate_otp',
             result: 'failure'
           });
-          res.send('OTP is invalid')
+          res.status(400).send('Invalid')
         } catch(e) {
-          res.send(e)
+          res.status(500).send(e)
         }
       }
     }
