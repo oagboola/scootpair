@@ -16,16 +16,16 @@ module.exports = async function(req, res) {
       });
       activeUser.update({locked: false});
       activeUser.save();
-      res.send('Unlock');
+      res.send('Unlocked');
     } else {
       log({
         user: user,
         action: 'unlock',
         result: 'failure'
       });
-      res.send('User not paired')
+      res.status(400).send('User not paired');
     }
   } catch(e) {
-    res.send(e);
+    res.status(500).send(e);
   }
 }

@@ -21,9 +21,9 @@ module.exports = async function(req, res) {
             action: 'validate_pair',
             result: 'failure'
           });
-         res.send('Two minutes exceeded! Account disabled');
+         return res.status(400).send('Two minutes exceeded! Account disabled');
        } catch(e) {
-         res.send(e)
+         return res.status(500).send(e)
        }
      }
 

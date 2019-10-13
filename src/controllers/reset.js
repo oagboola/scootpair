@@ -10,11 +10,11 @@ module.exports = async function(req, res) {
     const { user } = req.body;
     if( auth === 'admin') {
       const activeUser = await User.findByIdAndUpdate(user, {$set: {disabled: false}});
-      res.send('Account Reset!')
+      res.send('Account Reset')
     } else {
-      res.send('Customer Agents only')
+      res.status(401).send('Customer Agents only')
     }
   } catch(e) {
-    res.send(e);
+    res.status(500).send(e);
   }
 }
