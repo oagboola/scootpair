@@ -4,8 +4,8 @@ const log = require('./log');
 const pairingCode = require('./paringCode');
 
 module.exports = {
-  User: user,
-  OTP: OTP,
-  Log: log,
-  PairingCode: pairingCode
-}
+	User: user,
+	OTP: OTP,
+	Log: log,
+	PairingCode: pairingCode
+};

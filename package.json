@@ -4,9 +4,11 @@
   "scripts": {
     "start": "DB=scootpair node ./bin/www",
     "start-dev": "DB=scootpair nodemon ./bin/www",
-    "test": "NODE_ENV=test DB=test_db mocha src/test --exit"
+    "test": "NODE_ENV=test DB=test_db mocha src/test --exit",
+    "lint": "./node_modules/.bin/eslint --fix ."
   },
   "dependencies": {
+    "acorn": "^7.1.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -20,6 +22,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "eslint": "^6.5.1",
     "mocha": "^6.2.1",
     "supertest": "^4.0.2"
   }
