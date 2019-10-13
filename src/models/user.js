@@ -4,8 +4,8 @@ const user = new mongoose.Schema({
 	phone: 'Number',
 	vin: 'Number',
 	locked: {
-		tyep: 'Boolean',
-		default: false
+		type: 'Boolean',
+		default: true
 	},
 	paired: {
 		type: 'Boolean',

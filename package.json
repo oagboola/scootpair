@@ -2,8 +2,8 @@
   "name": "scootpair",
   "version": "0.0.0",
   "scripts": {
-    "start": "DB=scootpair node ./bin/www",
-    "start-dev": "DB=scootpair nodemon ./bin/www",
+    "start": "NODE_ENV=dev DB=scootpair node ./bin/www",
+    "start-local": "DB=scootpair nodemon ./bin/www",
     "test": "NODE_ENV=test DB=test_db mocha src/test --exit",
     "lint": "./node_modules/.bin/eslint --fix ."
   },

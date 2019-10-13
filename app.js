@@ -15,12 +15,16 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-let db = 'mongodb://mongo:27017/' + process.env.DB;
+let db = process.env.DB;
+let dbPrefix;
 
-if (process.env.NODE_ENV  === 'test') {
-	db = 'mongodb://localhost/test_db';
+if(process.env.NODE_ENV === "dev") {
+  dbPrefix = 'mongodb://mongo:27017/'
+} else {
+  dbPrefix = 'mongodb://localhost/'
 }
-mongoose.connect(db);
+
+mongoose.connect(dbPrefix + db);
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
