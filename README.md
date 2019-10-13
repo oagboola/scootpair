@@ -5,7 +5,7 @@
 
 - user docker-compose up to start the app
 
-- app runs on http://localhost:3000/unlock
+- app runs on http://localhost:3000
 
 # Endpoints
 
