@@ -3,7 +3,7 @@
 # Set up
 - The database needs to be pre-populated with existing users. The users collection is structured as `{"phone":1234, "vin": 8765, "locked": false, "paired": false, "disabled": false, "locked": true}`. Refer to the `POST /users` endpoint to create a new user
 
-- use `docker-compose` up to start the app
+- use `docker-compose up` to start the app
 
 - app runs on http://localhost:3000
 
