@@ -8,7 +8,7 @@
     "lint": "./node_modules/.bin/eslint --fix ."
   },
   "dependencies": {
-    "acorn": "^7.1.0",
+    "acorn": "^7.1.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
